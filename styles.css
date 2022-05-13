@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=IBM+Plex+Sans+Thai:wght@100&family=Indie+Flower&family=Lobster&family=Lora:ital@1&family=Merriweather:ital,wght@1,300&family=Playfair+Display:ital@1&family=Sriracha&display=swap');
+
+/* กำหนดค่าสีไว้ล่วงหน้า */
+:root{
+    --accent : rgb(195, 240, 111);
+    --accHover : #B4E0EA;
+    --bark : rgba(139, 154, 184, 0.7);
+    --light : #fff;
+    --transition : all 0.3s ease 0s /* Define delay time */
+}
+
+/* all section */
+*{
+    /* Clear margin and padding */
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+html,body{
+    height: 100%; /* fixed height */
+    overflow: auto; /* Using scroll */
+}
+
+body{
+    background: linear-gradient(var(--bark), var(--bark)),
+    url(bgweb.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;/* fixed screen scale */
+}
+
+a, button, p{
+    font-family: Merriweather;
+    color: var(--light);
+}
+
+a, button, .logo{
+    cursor: pointer;
+}
+
+main{
+    height: 100%;
+    display: grid;
+    /* กำหนด grid */
+    grid-template-columns: minmax(60px ,1fr)repeat(6, minmax(50px, 190px)) minmax(60px, 1fr);
+}
+
+header{
+    grid-column: 1 / span 7;/* header start 2nd col and other span 7 */
+    margin-left: 5%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+/* class */
+.link{
+    margin-left: auto;
+}
+
+.link a, .link button{
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: var(--transition); /* Action */
+}
+
+.link a{
+    margin-right: 20px;
+}
+
+.link a:hover{
+    color: var(--accHover); /* Cursor hover -> change colot */
+}
+
+.button_med{
+    border: none;
+    background-color: var(--accent);
+    padding: 8px 25px;
+}
+
+.button_med:hover{
+    color: var(--accHover);
+}
+
+.info{
+    grid-column: 2 / span 6;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.content_1{
+    font-family: Merriweather;
+    color: black;
+    font-size: 3.5rem;
+}
+
+.content_2{
+    font-family: Merriweather;
+    color: var(--light);
+    font-size: 1.5rem;
+}
+
+.icons{
+    margin-left: 36%;
+    margin-top: 5%;
+    display: flex;
+}
+
+.icon{
+    margin-right: 30px;
+}
+
+.icon img{
+    width: 60px;
+    height: 60px;
+}
+
+.icon_info{
+    text-align: center;
+}
+
+.features{
+    grid-column: 2 / span 7;
+    background-color: rgb(195, 240, 111);
+    margin-top: 5%;
+    /* top right bottom left */
+    padding: 30px 0px 0px 20px;
+    display: flex;
+}
+
+.feature{
+    display: flex;
+    /* top right bottom left */
+    margin: 0px 10px 30px 10px;
+}
+
+.feature img{
+    width: 226px;
+    height: 139px;
+    margin-right: 20px;
+}
+
+.feature_info p{
+    color: #000;
+}
+
+.feature_top, .feature_more{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.feature_bottom{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.feature_more:hover{
+    color: var(--accHover);
+}
+
+.feature_more{
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Responsive Website */
+@media only screen and (max-width:1100px){
+    .icon img{
+        height: 55px;
+        width: auto;
+    }
+    .content_1, .content_2{
+        font-size: 2.75rem;
+    }
+    .feature{
+        grid-column: 1 / span 7;
+    }
+}
+
+@media only screen and (max-width:850px){
+    .info{
+        grid-column: 2 / span 7;
+    }
+    .icons{
+        flex-direction: column;
+    }
+    .icon{
+        margin-right: 60%;
+    }
+    .content_1,.content_2{
+        font-size: 1.75rem;
+    }
+    .features{
+        flex-direction: column;
+    }
+}
